@@ -10,6 +10,7 @@ def convert_to_mbps(value):
 
 
 st = Speedtest()
+st.get_best_server()
 df = pd.DataFrame(columns=['Time', 'Download'])
 for i in tqdm(range(5)):
     if i != 0:
