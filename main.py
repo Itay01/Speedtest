@@ -16,6 +16,7 @@ for i in tqdm(range(5)):
     if i != 0:
         time.sleep(120)
     download = convert_to_mbps(st.download())
+    print(f"Result {i+1}: {download} Mbps")
     df = df._append({'Time': datetime.now().strftime("%H-%M-%S"), 'Download': download}, ignore_index=True)
 
 df.to_csv('speedtest.csv', index=False)
